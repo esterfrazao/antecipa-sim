@@ -6,8 +6,7 @@ import antecipationSchema from "../../utils/schemas/antecipationSchema";
 
 const Form = () => {
   const [valueInput, setValueInput] = useState("0.00");
-  const [installmentsInput, setInstallmentsInput] = useState("");
-  const [mdrInput, setMdrInput] = useState("");
+  const [mdrInput, setMdrInput] = useState("%");
   const {
     handleSubmit,
     register,
@@ -16,25 +15,11 @@ const Form = () => {
     resolver: yupResolver(antecipationSchema),
   });
 
-  const fields = [
-    {
-      title: "Quatidade de parcelas *",
-      name: "installments",
-      type: "number",
-      placeholder: "10",
-    },
-    {
-      title: "Percentual de MDR *",
-      name: "mdr",
-      type: "number",
-      placeholder: "4%",
-    },
-  ];
   const onSubmit = (data) => console.log(data);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
+      <fieldset>
         <label>Informe o valor da venda *</label>
         <input
           type="text"
@@ -46,19 +31,23 @@ const Form = () => {
         />
         <span className="displayValue">{valueInput}</span>
         <span className="error-message">{errors["value"]?.message}</span>
-      </div>
-      {fields?.map((input, i) => (
-        <div key={i}>
-          <label>{input.title}</label>
-          <input
-            type={input.type}
-            placeholder={input.placeholder}
-            {...register(input.name)}
-            onChange={() => console.log("mudou")}
-          />
-          <span>{errors[input.name]?.message}</span>
-        </div>
-      ))}
+      </fieldset>
+      <fieldset>
+        <label>Quatidade de parcelas *</label>
+        <input type="number" placeholder="10" {...register("installments")} />
+        <span className="error-message">{errors["value"]?.message}</span>
+      </fieldset>
+      <fieldset>
+        <label>Percentual de MDR *</label>
+        <input
+          type="text"
+          placeholder="4%"
+          {...register("mdr")}
+          onChange={(e) => setMdrInput(e.target.value + "%")}
+        />
+        <span className="displayValue">{mdrInput}</span>
+        <span>{errors["mdr"]?.message}</span>
+      </fieldset>
       <button type="submit">Enviar</button>
     </form>
   );
