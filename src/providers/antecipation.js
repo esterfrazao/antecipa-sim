@@ -1,20 +1,25 @@
 import { createContext, useContext, useState } from "react";
 import api from "../services";
 
-const AntecipationContext = createContext()
+const AntecipationContext = createContext();
 
-export const AntecipationProvider = ({children}) =>{
-    const [data, setData] = useState({})
+export const AntecipationProvider = ({ children }) => {
+  const [results, setResults] = useState({});
 
-    const simulate = (data) => {
-        api.post("", data).then(res => setData(res.data))
-    }
+  const simulate = (data) => {
+    api.post("", data).then((res) => setResults(res.data));
+  };
 
-    return <AntecipationContext.Provider value={{
-        data, simulate
-    }}>
-        {children}
+  return (
+    <AntecipationContext.Provider
+      value={{
+        results,
+        simulate,
+      }}
+    >
+      {children}
     </AntecipationContext.Provider>
-}
+  );
+};
 
-export const useSimulator = () => useContext(AntecipationContext)
+export const useSimulator = () => useContext(AntecipationContext);
