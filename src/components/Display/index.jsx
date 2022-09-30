@@ -1,12 +1,14 @@
 import { useSimulator } from "../../providers/antecipation";
 
 const Display = () => {
-  const { results } = useSimulator();
+  const { results, message } = useSimulator();
 
   return (
     <>
       <h2>Você Receberá:</h2>
-      {results["1"] ? (
+      {message ? (
+        <h3>{message}</h3>
+      ) : (
         <>
           <div>
             <h3>Amanhã</h3>
@@ -25,8 +27,6 @@ const Display = () => {
             <p>{results["90"]}</p>
           </div>
         </>
-      ) : (
-        <h3>Carregando...</h3>
       )}
     </>
   );
