@@ -1,18 +1,18 @@
-import "./App.css";
+import { AppContainer, Aside, Calculator } from "./styles/global";
 import Display from "./components/Display";
 import Form from "./components/Form";
 
 const App = () => {
   return (
-    <div className="app">
-      <main className="calculator">
+    <AppContainer>
+      <Calculator>
         <h1>Simule sua Antecipação</h1>
         <Form />
-      </main>
-      <aside className="results">
+      </Calculator>
+      <Aside>
         <Display />
-      </aside>
-    </div>
+      </Aside>
+    </AppContainer>
   );
 };
 
