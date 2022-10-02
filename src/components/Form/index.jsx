@@ -43,12 +43,12 @@ const Form = () => {
           />
           <span>{valueInput}</span>
         </MaskedInput>
-        <span className="error-message">{errors["amount"]?.message}</span>
+        <span className="error-message">{errors.amount?.message}</span>
       </fieldset>
       <fieldset>
         <label>Quatidade de parcelas *</label>
         <Input type="number" placeholder="10" {...register("installments")} />
-        <span className="error-message">{errors["installments"]?.message}</span>
+        <span className="error-message">{errors.installments?.message}</span>
       </fieldset>
       <fieldset>
         <label>Percentual de MDR *</label>
@@ -61,7 +61,7 @@ const Form = () => {
           />
           <span>{mdrInput}</span>
         </MaskedInput>
-        <span>{errors["mdr"]?.message}</span>
+        <span className="error-message">{errors.mdr?.message}</span>
       </fieldset>
       <button type="submit">Enviar</button>
     </StyledForm>

@@ -75,7 +75,7 @@ export const Calculator = styled.main`
     font-size: 1.5rem;
     color: var(--dark);
     line-height: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 `;
 

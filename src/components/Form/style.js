@@ -8,12 +8,13 @@ export const StyledForm = styled.form`
     flex-direction: column;
     border: none;
     outline: none;
+    position: relative;
   }
 
   button {
     position: absolute;
     right: -1%;
-    bottom: -35%;
+    bottom: -15%;
     border: 2px solid var(--light-blue);
     color: var(--light-blue);
     background: none;
@@ -26,6 +27,13 @@ export const StyledForm = styled.form`
     color: var(--secondary-shadow);
     border-color: var(--secondary-shadow);
   }
+
+  .error-message {
+    color: var(--bright-blue);
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: -5%;
+  }
 `;
 
 export const Input = styled.input`
@@ -33,6 +41,7 @@ export const Input = styled.input`
   padding: 3px 5px;
   width: 100%;
   border: 2px solid var(--primary-shadow);
+  margin-bottom: 15px;
 `;
 
 export const MaskedInput = styled.div`
