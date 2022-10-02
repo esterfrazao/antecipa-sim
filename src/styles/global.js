@@ -84,4 +84,9 @@ export const Aside = styled.aside`
   background-color: var(--primary-shadow);
   width: 40%;
   height: 100%;
+
+  h2 {
+    line-height: 1.8rem;
+    margin-bottom: 10%;
+  }
 `;
