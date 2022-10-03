@@ -4,10 +4,10 @@
 
 ### Calculadora simuladora de antecipação para suas transações
 
-🚧 Projeto em construção 🚧
-
 Já se perguntou quanto custa antecipar uma transação? Essa calculadora fará simulações suficientes para que você possa ter um norte em suas transações, sabendo quais valores receberá caso decida antecipar o recebimento.
+
+🚧 Projeto Desenvolvido em ReactJS 🚧
 
 ## 📁 Acesso ao projeto
 
-[Deployment](<!--link do vercel-->)
+[Deployment](https://antecipa-sim.vercel.app)
