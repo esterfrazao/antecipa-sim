@@ -9,11 +9,16 @@ export const AntecipationProvider = ({ children }) => {
 
   const simulate = (data) => {
     setMessage("Carregando...");
+
     api
       .post("", data)
-      .then((res) => setResults(res.data))
-      .catch((err) => setMessage(err))
-      .then(() => setMessage(false));
+      .then((res) => {
+        setResults(res.data);
+        setMessage(false);
+      })
+      .catch((err) =>
+        setMessage(err.response.data.message + ", Tente Novamente!")
+      );
   };
 
   return (
