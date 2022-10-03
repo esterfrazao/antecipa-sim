@@ -62,6 +62,7 @@ export const AppContainer = styled.div`
 
   @media (max-width: 700px) {
     flex-direction: column;
+    height: 85%;
   }
 `;
 
@@ -77,6 +78,11 @@ export const Calculator = styled.main`
     line-height: 2rem;
     margin-bottom: 10px;
   }
+
+  @media (max-width: 700px) {
+    height: 59%;
+    width: 100%;
+  }
 `;
 
 export const Aside = styled.aside`
@@ -88,5 +94,14 @@ export const Aside = styled.aside`
   h2 {
     line-height: 1.8rem;
     margin-bottom: 10%;
+  }
+
+  @media (max-width: 700px) {
+    height: 41%;
+    width: 100%;
+
+    h2 {
+      margin-bottom: 4%;
+    }
   }
 `;
