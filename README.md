@@ -11,3 +11,9 @@ Já se perguntou quanto custa antecipar uma transação? Essa calculadora fará 
 ## 📁 Acesso ao projeto
 
 [Deployment](https://antecipa-sim.vercel.app)
+
+## Se Desejar rodar a plicação localmente:
+
+- Clone o repositório
+- Instale as dependências utilizando o comando `yarn`
+- E agora basta rodar `yarn start` e a página será aberta no seu navegador em http://localhost:3000
